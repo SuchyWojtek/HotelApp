@@ -26,6 +26,12 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/hello", ReplyAction="http://tempuri.org/IService1/helloResponse")]
         System.Threading.Tasks.Task<string> helloAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addUser", ReplyAction="http://tempuri.org/IService1/addUserResponse")]
+        void addUser(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addUser", ReplyAction="http://tempuri.org/IService1/addUserResponse")]
+        System.Threading.Tasks.Task addUserAsync(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> helloAsync() {
             return base.Channel.helloAsync();
+        }
+        
+        public void addUser(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address) {
+            base.Channel.addUser(login, password, firstName, surname, dateOfBirth, male, postCode, address);
+        }
+        
+        public System.Threading.Tasks.Task addUserAsync(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address) {
+            return base.Channel.addUserAsync(login, password, firstName, surname, dateOfBirth, male, postCode, address);
         }
     }
 }

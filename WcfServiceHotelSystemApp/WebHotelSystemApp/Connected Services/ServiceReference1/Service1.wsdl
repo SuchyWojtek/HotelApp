@@ -18,6 +18,12 @@
   <wsdl:message name="IService1_hello_OutputMessage">
     <wsdl:part name="parameters" element="tns:helloResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DoWork" message="tns:IService1_DoWork_InputMessage" />
@@ -26,6 +32,10 @@
     <wsdl:operation name="hello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/hello" message="tns:IService1_hello_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/helloResponse" message="tns:IService1_hello_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addUser" message="tns:IService1_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addUserResponse" message="tns:IService1_addUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -41,6 +51,15 @@
     </wsdl:operation>
     <wsdl:operation name="hello">
       <soap:operation soapAction="http://tempuri.org/IService1/hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/addUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

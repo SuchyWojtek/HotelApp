@@ -6,11 +6,30 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
-    <form id="form1" runat="server">
+<body style="background-color:azure">
+    <form id="form1" runat="server" style="text-align: center">
         <div>
         </div>
-        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <div style="text-align=center">
+            <h1>Witaj na stronie Hotelu pod gołym niebem !</h1>
+        </div>
+        <div style="height: 262px">
+            <br/><br/><br/>
+            <asp:Label ID="Label1" runat="server" Text="Login"></asp:Label>
+            <br/>
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br/>
+            <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+            <br/>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br /><br />
+            <div style="align-items: baseline">
+                <asp:Button ID="Button1" runat="server" Text="Sign in" />
+                <asp:Button ID="Button2" runat="server" Text="Sign up" OnClick="Button2_Click"
+                    PostBackUrl="~/SignUp.aspx"/>
+            </div>
+        </div>
+        
     </form>
 </body>
 </html>

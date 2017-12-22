@@ -11,15 +11,15 @@ namespace WebHotelSystemApp
     public partial class Index : System.Web.UI.Page
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-             TextBox1.Text = client.hello();
-
+             
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            
+            client.Close();
         }
     }
 }

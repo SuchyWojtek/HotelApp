@@ -7,7 +7,6 @@ using System.Text;
 
 namespace WcfServiceHotelSystemApp
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
     public interface IService1
     {
@@ -15,5 +14,8 @@ namespace WcfServiceHotelSystemApp
         string DoWork();
         [OperationContract]
         string hello();
+        [OperationContract]
+        void addUser(string login, string password, string firstName, string surname, string dateOfBirth,
+            string male, string postCode, string address);
     }
 }

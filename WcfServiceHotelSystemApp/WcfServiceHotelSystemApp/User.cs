@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
 
-namespace WebHotelSystemApp
+namespace WcfServiceHotelSystemApp
 {
     public class User
     {
@@ -95,7 +96,36 @@ namespace WebHotelSystemApp
                 this.address = value;
             }
         }
+        // konstruktor
+        public User(string login, string password, string firstName, string surname, string dateOfBirth,
+            string male, string postCode, string address)
+        {
+            this.login = login;
+            this.password = password;
+            this.firstName = firstName;
+            this.surname = surname;
+            this.dateOfBirth = dateOfBirth;
+            this.male = male;
+            this.postCode = postCode;
+            this.address = address;
 
+            saveUsrToDb(); 
+        }
+
+        // zapisuje usera do bazy danych
+        void saveUsrToDb()
+        {
+            string connectionString = @"";
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "insert into user set (login, password, firstName, surname, dateOfBirth," +
+                "male, postCode, address) values (" + login + "," + password + "," + firstName + ","
+                + surname + "," + dateOfBirth + "," + male + "," + postCode + "," + address + ")";
+            SqlCommand com = new SqlCommand(query);
+
+            conn.Open();
+            com.ExecuteNonQuery();
+            conn.Close();
+        }
 
     }
 }
