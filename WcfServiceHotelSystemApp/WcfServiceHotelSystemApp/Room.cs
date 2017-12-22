@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
 
 namespace WcfServiceHotelSystemApp
 {
@@ -61,6 +62,33 @@ namespace WcfServiceHotelSystemApp
             {
                 this.vacancy = value;
             }
+        }
+
+        // konstruktor pokoju, po tym zapsujemy do bazy danych
+        public Room(int roomId, int personNum, int floor, double price, bool vacancy)
+        {
+            this.roomId = roomId;
+            this.personNum = personNum;
+            this.floor = floor;
+            this.price = price;
+            this.vacancy = vacancy;
+
+            saveRoomToDb();
+        }
+
+        // zapis do db
+        void saveRoomToDb()
+        {
+            string connectionString = @"";
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "insert into room set (roomid, personnum, floor, price, empty" +
+                "values (" + roomId + "," + personNum + "," + floor + ","
+                + price + "," + vacancy + ")";
+            SqlCommand com = new SqlCommand(query);
+
+            conn.Open();
+            com.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

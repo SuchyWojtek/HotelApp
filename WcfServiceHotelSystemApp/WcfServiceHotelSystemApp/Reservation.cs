@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
 
 namespace WcfServiceHotelSystemApp
 {
@@ -52,9 +53,30 @@ namespace WcfServiceHotelSystemApp
             }
         }
 
-        Reservation()
+        // konstruktor, potem save do db
+        public Reservation(string userLogin, int roomId, string beginDate, string endDate)
         {
+            this.beginDate = beginDate;
+            this.endDate = endDate;
+            this.roomId = roomId;
+            this.userLogin = userLogin;
 
+            saveResToDb();
+        }
+
+        // zapis rezerwacji do bazy
+        void saveResToDb()
+        {
+            string connectionString = @"";
+            SqlConnection conn = new SqlConnection(connectionString);
+            string query = "insert into reservation set (userlogin, roomid, begindate, enddate" +
+                " values (" + userLogin + "," + roomId + "," + beginDate + ","
+                + endDate + ")";
+            SqlCommand com = new SqlCommand(query);
+
+            conn.Open();
+            com.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
