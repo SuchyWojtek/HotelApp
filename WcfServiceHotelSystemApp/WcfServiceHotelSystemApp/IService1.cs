@@ -12,6 +12,8 @@ namespace WcfServiceHotelSystemApp
     public interface IService1
     {
         [OperationContract]
-        void DoWork();
+        string DoWork();
+        [OperationContract]
+        string hello();
     }
 }
