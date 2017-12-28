@@ -24,7 +24,7 @@
             <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br /><br />
             <div style="align-items: baseline">
-                <asp:Button ID="Button1" runat="server" Text="Sign in" />
+                <asp:Button ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" runat="server" Text="Sign up" OnClick="Button2_Click"
                     PostBackUrl="~/SignUp.aspx"/>
             </div>
