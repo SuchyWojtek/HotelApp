@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WcfServiceHotelSystemApp
 {
@@ -79,16 +80,20 @@ namespace WcfServiceHotelSystemApp
         // zapis do db
         void saveRoomToDb()
         {
-            string connectionString = @"";
-            SqlConnection conn = new SqlConnection(connectionString);
             string query = "insert into room set (roomid, personnum, floor, price, empty" +
-                "values (" + roomId + "," + personNum + "," + floor + ","
-                + price + "," + vacancy + ")";
-            SqlCommand com = new SqlCommand(query);
+                $"values ('{roomId}','{personNum}','{floor}','{price}','{vacancy}')";
 
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
             conn.Open();
+
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = query;
             com.ExecuteNonQuery();
+
             conn.Close();
+
         }
     }
 }

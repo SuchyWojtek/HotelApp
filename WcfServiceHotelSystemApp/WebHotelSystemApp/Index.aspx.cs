@@ -10,30 +10,31 @@ namespace WebHotelSystemApp
 {
     public partial class Index : System.Web.UI.Page
     {
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             
         }
 
         // button sign up
         protected void Button2_Click(object sender, EventArgs e)
         {
-            client.Close();
+            
         }
 
         // button sign in 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+
             // metoda verify login do zrobienia(wiadmo co robi)
-            if(client.verifyLogin()==true)
+            if (client.verifyLogin(TextBox1.Text.ToString(),TextBox2.Text.ToString())==true)
             {
-                // trzeba napisac przeskok do nowego okna
+                Response.Redirect("~/SignIn.aspx");
             }
             else
             {
-                // trzeba wyrzucic blad o zlym logowaniu
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Błędny login lub hasło')</script>");
             }
 
             client.Close();

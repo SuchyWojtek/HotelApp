@@ -8,94 +8,33 @@ namespace WcfServiceHotelSystemApp
 {
     public class User
     {
-        string login
+        string login;
+        string password;
+        string firstName;
+        string surname;
+        string dateOfBirth;
+        string male;
+        string postCode;
+        string address;
+
+        // zapisuje usera do bazy danych
+        void saveUsrToDb()
         {
-            get
-            {
-                return this.login;
-            }
-            set
-            {
-                this.login = value;
-            }
+            string query = $"insert into Userr (login, password, firstName, surname, dateOfBirth,male, postCode, address) values" +
+                $" ('{login}','{password}','{firstName}','{surname}','{dateOfBirth}','{male}','{postCode}','{address}')";
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            conn.Open();
+
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = query;
+            com.ExecuteNonQuery();
+
+            conn.Close();
         }
-        string password
-        {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-                this.password = value;
-            }
-        }
-        string firstName
-        {
-            get
-            {
-                return this.firstName;
-            }
-            set
-            {
-                this.firstName = value;
-            }
-        }
-        string surname
-        {
-            get
-            {
-                return this.surname;
-            }
-            set
-            {
-                this.surname = value;
-            }
-        }
-        string dateOfBirth
-        {
-            get
-            {
-                return this.dateOfBirth;
-            }
-            set
-            {
-                this.dateOfBirth = value;
-            }
-        }
-        string male
-        {
-            get
-            {
-                return this.male;
-            }
-            set
-            {
-                this.male = value;
-            }
-        }
-        string postCode
-        {
-            get
-            {
-                return this.postCode;
-            }
-            set
-            {
-                this.postCode = value;
-            }
-        }
-        string address
-        {
-            get
-            {
-                return this.address;
-            }
-            set
-            {
-                this.address = value;
-            }
-        }
+
         // konstruktor
         public User(string login, string password, string firstName, string surname, string dateOfBirth,
             string male, string postCode, string address)
@@ -109,22 +48,7 @@ namespace WcfServiceHotelSystemApp
             this.postCode = postCode;
             this.address = address;
 
-            saveUsrToDb(); 
-        }
-
-        // zapisuje usera do bazy danych
-        void saveUsrToDb()
-        {
-            string connectionString = @"";
-            SqlConnection conn = new SqlConnection(connectionString);
-            string query = "insert into user set (login, password, firstName, surname, dateOfBirth," +
-                "male, postCode, address) values (" + login + "," + password + "," + firstName + ","
-                + surname + "," + dateOfBirth + "," + male + "," + postCode + "," + address + ")";
-            SqlCommand com = new SqlCommand(query);
-
-            conn.Open();
-            com.ExecuteNonQuery();
-            conn.Close();
+            saveUsrToDb();
         }
 
     }

@@ -9,7 +9,7 @@ namespace WebHotelSystemApp
 {
     public partial class SignUp : System.Web.UI.Page
     {
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,8 +22,10 @@ namespace WebHotelSystemApp
 
         protected void btnConfirmData_Click(object sender, EventArgs e)
         {
-            client.addUser(s(txbLog), s(txbPass), s(txbName), s(txbSurname), s(txbDate),
-                s(txbMale), s(txbPostCode), s(txbAddress));
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+             client.addUser(s(txbLog), s(txbPass), s(txbName), s(txbSurname), s(txbDate),
+             s(txbMale), s(txbPostCode), s(txbAddress));
+            client.Close();
         }
     }
 }

@@ -15,7 +15,7 @@
             <asp:TextBox ID="txbLog" runat="server"></asp:TextBox>
             <br /><br />
             <asp:Label ID="Label2" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox ID="txbPass" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txbPass" runat="server" TextMode="Password"></asp:TextBox>
             <br /><br />
             <asp:Label ID="Label3" runat="server" Text="First Name:"></asp:Label>
             <asp:TextBox ID="txbName" runat="server"></asp:TextBox>
@@ -35,7 +35,7 @@
             <asp:Label ID="Label8" runat="server" Text="Post Code:"></asp:Label>
             <asp:TextBox ID="txbPostCode" runat="server"></asp:TextBox>
             <br /><br />
-            <asp:Button ID="btnConfirmData" runat="server" Text="Confirm" OnClick="btnConfirmData_Click" />
+            <asp:Button ID="btnConfirmData" runat="server" Text="Confirm" OnClick="btnConfirmData_Click"/>
         </div>
     </form>
 </body>

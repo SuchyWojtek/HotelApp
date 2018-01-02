@@ -319,13 +319,13 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp.csproj">
       <Project>{b2c5b9c7-e55a-4d0b-9225-7110fd68b139}</Project>
       <Name>WcfServiceHotelSystemApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

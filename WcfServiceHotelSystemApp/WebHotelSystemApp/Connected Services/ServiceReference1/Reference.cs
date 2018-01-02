@@ -32,6 +32,24 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addUser", ReplyAction="http://tempuri.org/IService1/addUserResponse")]
         System.Threading.Tasks.Task addUserAsync(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addReservation", ReplyAction="http://tempuri.org/IService1/addReservationResponse")]
+        void addReservation(string userLogin, int roomId, string beginDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addReservation", ReplyAction="http://tempuri.org/IService1/addReservationResponse")]
+        System.Threading.Tasks.Task addReservationAsync(string userLogin, int roomId, string beginDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoom", ReplyAction="http://tempuri.org/IService1/addRoomResponse")]
+        void addRoom(int roomId, int personNum, int floor, double price, bool vacancy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addRoom", ReplyAction="http://tempuri.org/IService1/addRoomResponse")]
+        System.Threading.Tasks.Task addRoomAsync(int roomId, int personNum, int floor, double price, bool vacancy);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/verifyLogin", ReplyAction="http://tempuri.org/IService1/verifyLoginResponse")]
+        bool verifyLogin(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/verifyLogin", ReplyAction="http://tempuri.org/IService1/verifyLoginResponse")]
+        System.Threading.Tasks.Task<bool> verifyLoginAsync(string login, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +101,30 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         public System.Threading.Tasks.Task addUserAsync(string login, string password, string firstName, string surname, string dateOfBirth, string male, string postCode, string address) {
             return base.Channel.addUserAsync(login, password, firstName, surname, dateOfBirth, male, postCode, address);
+        }
+        
+        public void addReservation(string userLogin, int roomId, string beginDate, string endDate) {
+            base.Channel.addReservation(userLogin, roomId, beginDate, endDate);
+        }
+        
+        public System.Threading.Tasks.Task addReservationAsync(string userLogin, int roomId, string beginDate, string endDate) {
+            return base.Channel.addReservationAsync(userLogin, roomId, beginDate, endDate);
+        }
+        
+        public void addRoom(int roomId, int personNum, int floor, double price, bool vacancy) {
+            base.Channel.addRoom(roomId, personNum, floor, price, vacancy);
+        }
+        
+        public System.Threading.Tasks.Task addRoomAsync(int roomId, int personNum, int floor, double price, bool vacancy) {
+            return base.Channel.addRoomAsync(roomId, personNum, floor, price, vacancy);
+        }
+        
+        public bool verifyLogin(string login, string password) {
+            return base.Channel.verifyLogin(login, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> verifyLoginAsync(string login, string password) {
+            return base.Channel.verifyLoginAsync(login, password);
         }
     }
 }

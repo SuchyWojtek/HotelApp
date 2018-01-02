@@ -19,15 +19,15 @@
             <br/>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br/>
-            <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+            <asp:Label ID="Label2" runat="server" Text="Hasło"></asp:Label>
             <br/>
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
             <br /><br />
             <div style="align-items: baseline">
-                <asp:Button ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
-                <asp:Button ID="Button2" runat="server" Text="Sign up" OnClick="Button2_Click"
-                    PostBackUrl="~/SignUp.aspx"/>
-            </div>
+                <asp:Button ID="Button1" runat="server" Text="Zaloguj się" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" Text="Załóż konto" OnClick="Button2_Click"
+                    PostBackUrl ="~/SignUp.aspx"/>
+        </div>
         </div>
         
     </form>

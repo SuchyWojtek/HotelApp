@@ -21,5 +21,7 @@ namespace WcfServiceHotelSystemApp
         void addReservation(string userLogin, int roomId, string beginDate, string endDate);
         [OperationContract]
         void addRoom(int roomId, int personNum, int floor, double price, bool vacancy);
+        [OperationContract]
+        bool verifyLogin(string login, string password);
     }
 }

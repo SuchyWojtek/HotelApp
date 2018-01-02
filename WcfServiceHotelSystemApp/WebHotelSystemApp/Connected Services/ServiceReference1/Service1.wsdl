@@ -24,6 +24,24 @@
   <wsdl:message name="IService1_addUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:addUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addReservation_InputMessage">
+    <wsdl:part name="parameters" element="tns:addReservation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addReservation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:addRoom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verifyLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:verifyLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_verifyLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verifyLoginResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DoWork" message="tns:IService1_DoWork_InputMessage" />
@@ -36,6 +54,18 @@
     <wsdl:operation name="addUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/addUser" message="tns:IService1_addUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/addUserResponse" message="tns:IService1_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addReservation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addReservation" message="tns:IService1_addReservation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addReservationResponse" message="tns:IService1_addReservation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addRoom" message="tns:IService1_addRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addRoomResponse" message="tns:IService1_addRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verifyLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/verifyLogin" message="tns:IService1_verifyLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/verifyLoginResponse" message="tns:IService1_verifyLogin_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -60,6 +90,33 @@
     </wsdl:operation>
     <wsdl:operation name="addUser">
       <soap:operation soapAction="http://tempuri.org/IService1/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReservation">
+      <soap:operation soapAction="http://tempuri.org/IService1/addReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoom">
+      <soap:operation soapAction="http://tempuri.org/IService1/addRoom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verifyLogin">
+      <soap:operation soapAction="http://tempuri.org/IService1/verifyLogin" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

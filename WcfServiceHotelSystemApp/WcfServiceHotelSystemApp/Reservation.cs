@@ -3,55 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WcfServiceHotelSystemApp
 {
     public class Reservation
     {
-        string userLogin
-        {
-            get
-            {
-                return this.userLogin;
-            }
-            set
-            {
-                this.userLogin = value;
-            }
-        }
-        int roomId
-        {
-            get
-            {
-                return this.roomId;
-            }
-            set
-            {
-                this.roomId = value;
-            }
-        }
-        string beginDate
-        {
-            get
-            {
-                return this.beginDate;
-            }
-            set
-            {
-                this.beginDate = value;
-            }
-        }
-        string endDate
-        {
-            get
-            {
-                return this.endDate;
-            }
-            set
-            {
-                this.endDate = value;
-            }
-        }
+        string userLogin;
+        int roomId;
+        string beginDate;
+        string endDate;
 
         // konstruktor, potem save do db
         public Reservation(string userLogin, int roomId, string beginDate, string endDate)
@@ -66,16 +27,19 @@ namespace WcfServiceHotelSystemApp
 
         // zapis rezerwacji do bazy
         void saveResToDb()
-        {
-            string connectionString = @"";
-            SqlConnection conn = new SqlConnection(connectionString);
-            string query = "insert into reservation set (userlogin, roomid, begindate, enddate" +
-                " values (" + userLogin + "," + roomId + "," + beginDate + ","
-                + endDate + ")";
-            SqlCommand com = new SqlCommand(query);
+        { 
+            string query = $"insert into Reservation (userLogin, roomId, beginDate, endDate) values " +
+                $"('{userLogin}',{roomId},'{beginDate}','{endDate}');";
 
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
             conn.Open();
+
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = query;
             com.ExecuteNonQuery();
+            
             conn.Close();
         }
     }
