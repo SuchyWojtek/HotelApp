@@ -27,5 +27,10 @@ namespace WebHotelSystemApp
              s(txbMale), s(txbPostCode), s(txbAddress));
             client.Close();
         }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Index.aspx");
+        }
     }
 }

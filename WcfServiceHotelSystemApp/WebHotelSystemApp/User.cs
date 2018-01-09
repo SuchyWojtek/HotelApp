@@ -96,6 +96,13 @@ namespace WebHotelSystemApp
             }
         }
 
-
+        public User(string login)
+        {
+            this.login = login;
+        }
+        public string getLogin()
+        {
+            return this.login;
+        }
     }
 }

@@ -68,5 +68,46 @@ namespace WcfServiceHotelSystemApp
                 return false;
             }
         }
+
+        // zwroc id pokoi
+        public int[][] getEmptyRooms()
+        {
+            int[][] arrRooms = new int[5][];
+            arrRooms[0] = new int[200];
+            arrRooms[1] = new int[200];
+            arrRooms[2] = new int[200];
+            arrRooms[3] = new int[200];
+            arrRooms[4] = new int[200];
+
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            string query = "select * from room";
+
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(query, conn);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            int i = 0;
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    arrRooms[0][i] = (int)reader[0];
+                    arrRooms[1][i] = (int)reader[1];
+                    arrRooms[2][i] = (int)reader[2];
+                    arrRooms[3][i] = (int)reader[3];
+                    arrRooms[4][i] = (int)reader[4];
+                    i += 1;
+                }
+            }
+
+            reader.Close();
+            conn.Close();
+
+            return arrRooms;
+        }
     }
 }

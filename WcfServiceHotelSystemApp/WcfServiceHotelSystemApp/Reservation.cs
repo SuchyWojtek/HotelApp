@@ -23,6 +23,7 @@ namespace WcfServiceHotelSystemApp
             this.userLogin = userLogin;
 
             saveResToDb();
+            changeStatus(roomId);
         }
 
         // zapis rezerwacji do bazy
@@ -40,6 +41,22 @@ namespace WcfServiceHotelSystemApp
             com.CommandText = query;
             com.ExecuteNonQuery();
             
+            conn.Close();
+        }
+        // update statusu pokoju
+        void changeStatus(int id)
+        {
+            string query = $"update room set empty=0 where roomid={id}";
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            conn.Open();
+
+            SqlCommand com = new SqlCommand();
+            com.Connection = conn;
+            com.CommandText = query;
+            com.ExecuteNonQuery();
+
             conn.Close();
         }
     }

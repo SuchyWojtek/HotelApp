@@ -10,8 +10,9 @@
     <form id="form1" runat="server">
         <div style="text-align: center">
             <br/><br/><br/><br/>
-            <asp:Button ID="Button1" runat="server" Text="Search room" />
-            <asp:Button ID="Button2" runat="server" Text="History of reservation" /> 
+            <asp:Button ID="Button1" runat="server" Text="Szukaj pokoju" OnClick="Button1_Click"
+                PostBackUrl="~/SearchRoom.aspx"/>
+            <asp:Button ID="Button2" runat="server" Text="Historia rezerwacji" /> 
         </div>
     </form>
 </body>

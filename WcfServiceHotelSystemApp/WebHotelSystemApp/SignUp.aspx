@@ -36,6 +36,7 @@
             <asp:TextBox ID="txbPostCode" runat="server"></asp:TextBox>
             <br /><br />
             <asp:Button ID="btnConfirmData" runat="server" Text="Confirm" OnClick="btnConfirmData_Click"/>
+            <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click"/>
         </div>
     </form>
 </body>

@@ -50,6 +50,12 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/verifyLogin", ReplyAction="http://tempuri.org/IService1/verifyLoginResponse")]
         System.Threading.Tasks.Task<bool> verifyLoginAsync(string login, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getEmptyRooms", ReplyAction="http://tempuri.org/IService1/getEmptyRoomsResponse")]
+        int[][] getEmptyRooms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getEmptyRooms", ReplyAction="http://tempuri.org/IService1/getEmptyRoomsResponse")]
+        System.Threading.Tasks.Task<int[][]> getEmptyRoomsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +131,14 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> verifyLoginAsync(string login, string password) {
             return base.Channel.verifyLoginAsync(login, password);
+        }
+        
+        public int[][] getEmptyRooms() {
+            return base.Channel.getEmptyRooms();
+        }
+        
+        public System.Threading.Tasks.Task<int[][]> getEmptyRoomsAsync() {
+            return base.Channel.getEmptyRoomsAsync();
         }
     }
 }
