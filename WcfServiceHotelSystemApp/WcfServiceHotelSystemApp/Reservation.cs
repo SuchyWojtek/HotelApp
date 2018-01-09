@@ -29,7 +29,7 @@ namespace WcfServiceHotelSystemApp
         // zapis rezerwacji do bazy
         void saveResToDb()
         { 
-            string query = $"insert into Reservation (userLogin, roomId, beginDate, endDate) values " +
+            string query = $"insert into rezerwacje (login, idpokoju, poczatek, koniec) values " +
                 $"('{userLogin}',{roomId},'{beginDate}','{endDate}');";
 
             SqlConnection conn = new SqlConnection();

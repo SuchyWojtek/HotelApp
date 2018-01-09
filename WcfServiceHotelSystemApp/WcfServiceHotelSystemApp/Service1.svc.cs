@@ -57,16 +57,21 @@ namespace WcfServiceHotelSystemApp
             }
 
             reader.Close();
-            conn.Close();
 
-            if(value!=null)
+            query = $"update activelogin set active = '{log}' where id = 1";
+
+            if (value!=null)
             {
+                com.CommandText = query;
+                com.ExecuteNonQuery();
                 return true;
             }
             else
             {
                 return false;
             }
+
+            conn.Close();
         }
 
         // zwroc id pokoi
@@ -108,6 +113,80 @@ namespace WcfServiceHotelSystemApp
             conn.Close();
 
             return arrRooms;
+        }
+        
+        // pobiera login ktory jest zalogowany
+        public string getActiveLogin()
+        {
+            string value = "";
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            string query = "select * from activelogin";
+
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(query, conn);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    value = (string)reader[0];
+
+                }
+            }
+
+            reader.Close();
+            conn.Close();
+
+            return value;
+        }
+
+        // zwraca rezerwacje goscia
+        public string[][] getReservations(string log)
+        {
+            string[][] arrRes = new string[3][];
+            arrRes[0] = new string[50];
+            arrRes[1] = new string[50];
+            arrRes[2] = new string[50];
+
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
+            string query = $"select * from rezerwacje where login = '{log}'";
+
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+
+            SqlCommand command = new SqlCommand(query, conn);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            int i = 0;
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    arrRes[0][i] = ((int)reader[1]).ToString();
+                    arrRes[1][i] = (string)reader[2];
+                    arrRes[2][i] = (string)reader[3];
+                    i += 1;
+                }
+            }
+
+            while(i<50)
+            {
+                arrRes[0][i] = "";
+                arrRes[1][i] = "";
+                arrRes[2][i] = "";
+                i += 1;
+            }
+
+            reader.Close();
+            conn.Close();
+
+            return arrRes;
         }
     }
 }

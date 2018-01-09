@@ -603,13 +603,13 @@
             <asp:Label ID="Label2" runat="server" Text="Od:"></asp:Label>
                 <br />
                 <div style="width:200px;margin-left:auto;margin-right:auto">
-            <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+            <asp:TextBox ID="Calendar2" runat="server" Width="171px" TextMode="Date"></asp:TextBox>
                     </div>
             <br /><br />
             <asp:Label ID="Label3" runat="server" Text="Do:"></asp:Label>
                 <br />
                 <div style="width:200px;margin-left:auto;margin-right:auto">
-                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                <asp:TextBox ID="Calendar1" runat="server" Width="171px" TextMode="Date"></asp:TextBox>
                     </div>
                 <br /><br />
                 <asp:Label ID="Label4" runat="server" Text="Potwierdz login"></asp:Label>

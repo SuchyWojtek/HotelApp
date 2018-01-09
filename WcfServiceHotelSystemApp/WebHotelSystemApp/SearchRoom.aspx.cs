@@ -72,7 +72,7 @@ namespace WebHotelSystemApp
             if(arr[4][int.Parse(DropDownList1.Text.ToString())-1]==1)
             {
                 client.addReservation(TextBox1.Text.ToString(), int.Parse(DropDownList1.Text.ToString()),
-                Calendar2.ToString(), Calendar1.ToString());
+                Calendar2.Text.ToString(), Calendar1.Text.ToString());
                 Response.Redirect(@"http://localhost:34097/SearchRoom.aspx");
             }
             else

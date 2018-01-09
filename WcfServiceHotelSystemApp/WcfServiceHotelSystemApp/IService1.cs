@@ -25,5 +25,9 @@ namespace WcfServiceHotelSystemApp
         bool verifyLogin(string login, string password);
         [OperationContract]
         int[][] getEmptyRooms();
+        [OperationContract]
+        string getActiveLogin();
+        [OperationContract]
+        string[][] getReservations(string log);
     }
 }

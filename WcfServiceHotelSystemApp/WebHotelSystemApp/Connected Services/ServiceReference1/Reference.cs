@@ -56,6 +56,18 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getEmptyRooms", ReplyAction="http://tempuri.org/IService1/getEmptyRoomsResponse")]
         System.Threading.Tasks.Task<int[][]> getEmptyRoomsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getActiveLogin", ReplyAction="http://tempuri.org/IService1/getActiveLoginResponse")]
+        string getActiveLogin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getActiveLogin", ReplyAction="http://tempuri.org/IService1/getActiveLoginResponse")]
+        System.Threading.Tasks.Task<string> getActiveLoginAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getReservations", ReplyAction="http://tempuri.org/IService1/getReservationsResponse")]
+        string[][] getReservations(string log);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getReservations", ReplyAction="http://tempuri.org/IService1/getReservationsResponse")]
+        System.Threading.Tasks.Task<string[][]> getReservationsAsync(string log);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +151,22 @@ namespace WebHotelSystemApp.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int[][]> getEmptyRoomsAsync() {
             return base.Channel.getEmptyRoomsAsync();
+        }
+        
+        public string getActiveLogin() {
+            return base.Channel.getActiveLogin();
+        }
+        
+        public System.Threading.Tasks.Task<string> getActiveLoginAsync() {
+            return base.Channel.getActiveLoginAsync();
+        }
+        
+        public string[][] getReservations(string log) {
+            return base.Channel.getReservations(log);
+        }
+        
+        public System.Threading.Tasks.Task<string[][]> getReservationsAsync(string log) {
+            return base.Channel.getReservationsAsync(log);
         }
     }
 }

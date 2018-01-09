@@ -12,7 +12,7 @@
             <br/><br/><br/><br/>
             <asp:Button ID="Button1" runat="server" Text="Szukaj pokoju" OnClick="Button1_Click"
                 PostBackUrl="~/SearchRoom.aspx"/>
-            <asp:Button ID="Button2" runat="server" Text="Historia rezerwacji" /> 
+            <asp:Button ID="Button2" runat="server" Text="Historia rezerwacji" OnClick="Button2_Click" /> 
         </div>
     </form>
 </body>

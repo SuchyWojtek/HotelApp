@@ -55,7 +55,7 @@ namespace WebHotelSystemApp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar2;
+        protected global::System.Web.UI.WebControls.TextBox Calendar2;
         
         /// <summary>
         /// Label3 control.
@@ -73,7 +73,7 @@ namespace WebHotelSystemApp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.TextBox Calendar1;
         
         /// <summary>
         /// Label4 control.
