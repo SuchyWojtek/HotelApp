@@ -18,13 +18,18 @@ namespace WebHotelSystemApp
         // search room
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/SearchRoom.aspx");
         }
 
         // history of reservation
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/HistoryOfReservation.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Index.aspx");
         }
     }
 }

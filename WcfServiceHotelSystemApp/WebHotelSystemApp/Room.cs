@@ -7,60 +7,20 @@ namespace WebHotelSystemApp
 {
     public class Room
     {
-        private int roomId
+        private int _roomId;
+        private int _personNum;
+        private int _floor;
+        private double _price;
+        private bool _vacancy;
+
+        // konstruktor pokoju, po tym zapsujemy do bazy danych
+        public Room(int roomId, int personNum, int floor, double price, bool vacancy)
         {
-            get
-            {
-                return this.roomId;
-            }
-            set
-            {
-                this.roomId = value;
-            }
-        }
-        private int personNum
-        {
-            get
-            {
-                return this.personNum;
-            }
-            set
-            {
-                this.personNum = value;
-            }
-        }
-        private int floor
-        {
-            get
-            {
-                return this.floor;
-            }
-            set
-            {
-                this.floor = value;
-            }
-        }
-        private double price
-        {
-            get
-            {
-                return this.price;
-            }
-            set
-            {
-                this.price = value;
-            }
-        }
-        private bool vacancy
-        {
-            get
-            {
-                return this.vacancy;
-            }
-            set
-            {
-                this.vacancy = value;
-            }
+            _roomId = roomId;
+            _personNum = personNum;
+            _floor = floor;
+            _price = price;
+            _vacancy = vacancy;
         }
     }
 }

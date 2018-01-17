@@ -11,6 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHotelSystemApp", "WebHot
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHotelSystemApp.Tests", "WebHotelSystemApp.Tests\WebHotelSystemApp.Tests.csproj", "{1974D0D5-4386-42B4-841C-36D75181CB18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B2C5B9C7-E55A-4D0B-9225-7110FD68B139} = {B2C5B9C7-E55A-4D0B-9225-7110FD68B139}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,70 +9,20 @@ namespace WcfServiceHotelSystemApp
 {
     public class Room
     {
-        private int roomId
-        {
-            get
-            {
-                return this.roomId;
-            }
-            set
-            {
-                this.roomId = value;
-            }
-        }
-        private int personNum
-        {
-            get
-            {
-                return this.personNum;
-            }
-            set
-            {
-                this.personNum = value;
-            }
-        }
-        private int floor
-        {
-            get
-            {
-                return this.floor;
-            }
-            set
-            {
-                this.floor = value;
-            }
-        }
-        private double price
-        {
-            get
-            {
-                return this.price;
-            }
-            set
-            {
-                this.price = value;
-            }
-        }
-        private bool vacancy
-        {
-            get
-            {
-                return this.vacancy;
-            }
-            set
-            {
-                this.vacancy = value;
-            }
-        }
+        private int _roomId;
+        private int _personNum;
+        private int _floor;
+        private double _price;
+        private bool _vacancy;
 
         // konstruktor pokoju, po tym zapsujemy do bazy danych
         public Room(int roomId, int personNum, int floor, double price, bool vacancy)
         {
-            this.roomId = roomId;
-            this.personNum = personNum;
-            this.floor = floor;
-            this.price = price;
-            this.vacancy = vacancy;
+            _roomId = roomId;
+            _personNum = personNum;
+            _floor = floor;
+            _price = price;
+            _vacancy = vacancy;
 
             saveRoomToDb();
         }
@@ -81,7 +31,7 @@ namespace WcfServiceHotelSystemApp
         void saveRoomToDb()
         {
             string query = "insert into room set (roomid, personnum, floor, price, empty" +
-                $"values ('{roomId}','{personNum}','{floor}','{price}','{vacancy}')";
+                $"values ('{_roomId}','{_personNum}','{_floor}','{_price}','{_vacancy}')";
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";

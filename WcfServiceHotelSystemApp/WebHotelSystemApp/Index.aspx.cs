@@ -30,7 +30,7 @@ namespace WebHotelSystemApp
             // metoda verify login do zrobienia(wiadmo co robi)
             if (client.verifyLogin(TextBox1.Text.ToString(),TextBox2.Text.ToString())==true)
             { 
-                Response.Redirect(@"C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WebHotelSystemApp\SignIn.aspx");
+                Response.Redirect(@"~/SignIn.aspx");
             }
             else
             {

@@ -7,50 +7,17 @@ namespace WebHotelSystemApp
 {
     public class Reservation
     {
-        string userLogin {
-            get
-            {
-                return this.userLogin;
-            }
-            set
-            {
-                this.userLogin = value;
-            }               
-        }
-        int roomId {
-            get
-            {
-                return this.roomId;
-            }
-            set
-            {
-                this.roomId = value;
-            }
-        }
-        string beginDate {
-            get
-            {
-                return this.beginDate;
-            }
-            set
-            {
-                this.beginDate = value;
-            }
-        }
-        string endDate {
-            get
-            {
-                return this.endDate;
-            }
-            set
-            {
-                this.endDate = value;
-            }
-        }
+        string _userLogin;
+        int _roomId;
+        string _beginDate;
+        string _endDate;
 
-        Reservation()
+        public Reservation(string userLogin, int roomId, string beginDate, string endDate)
         {
-            
+            _beginDate = beginDate;
+            _endDate = endDate;
+            _roomId = roomId;
+            _userLogin = userLogin;
         }
     }
 }

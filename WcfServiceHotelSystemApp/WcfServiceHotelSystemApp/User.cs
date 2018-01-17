@@ -8,20 +8,20 @@ namespace WcfServiceHotelSystemApp
 {
     public class User
     {
-        string login;
-        string password;
-        string firstName;
-        string surname;
-        string dateOfBirth;
-        string male;
-        string postCode;
-        string address;
+        string _login;
+        string _password;
+        string _firstName;
+        string _surname;
+        string _dateOfBirth;
+        string _male;
+        string _postCode;
+        string _address;
 
         // zapisuje usera do bazy danych
         void saveUsrToDb()
         {
             string query = $"insert into Userr (login, password, firstName, surname, dateOfBirth,male, postCode, address) values" +
-                $" ('{login}','{password}','{firstName}','{surname}','{dateOfBirth}','{male}','{postCode}','{address}')";
+                $" ('{_login}','{_password}','{_firstName}','{_surname}','{_dateOfBirth}','{_male}','{_postCode}','{_address}')";
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";
@@ -39,14 +39,14 @@ namespace WcfServiceHotelSystemApp
         public User(string login, string password, string firstName, string surname, string dateOfBirth,
             string male, string postCode, string address)
         {
-            this.login = login;
-            this.password = password;
-            this.firstName = firstName;
-            this.surname = surname;
-            this.dateOfBirth = dateOfBirth;
-            this.male = male;
-            this.postCode = postCode;
-            this.address = address;
+            _login = login;
+            _password = password;
+            _firstName = firstName;
+            _surname = surname;
+            _dateOfBirth = dateOfBirth;
+            _male = male;
+            _postCode = postCode;
+            _address = address;
 
             saveUsrToDb();
         }

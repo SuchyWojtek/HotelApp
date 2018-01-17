@@ -9,18 +9,18 @@ namespace WcfServiceHotelSystemApp
 {
     public class Reservation
     {
-        string userLogin;
-        int roomId;
-        string beginDate;
-        string endDate;
+        string _userLogin;
+        int _roomId;
+        string _beginDate;
+        string _endDate;
 
         // konstruktor, potem save do db
         public Reservation(string userLogin, int roomId, string beginDate, string endDate)
         {
-            this.beginDate = beginDate;
-            this.endDate = endDate;
-            this.roomId = roomId;
-            this.userLogin = userLogin;
+            _beginDate = beginDate;
+            _endDate = endDate;
+            _roomId = roomId;
+            _userLogin = userLogin;
 
             saveResToDb();
             changeStatus(roomId);
@@ -30,7 +30,7 @@ namespace WcfServiceHotelSystemApp
         void saveResToDb()
         { 
             string query = $"insert into rezerwacje (login, idpokoju, poczatek, koniec) values " +
-                $"('{userLogin}',{roomId},'{beginDate}','{endDate}');";
+                $"('{_userLogin}',{_roomId},'{_beginDate}','{_endDate}');";
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Wojtek\Documents\Hotel.mdf;Integrated Security=True;Connect Timeout=30";

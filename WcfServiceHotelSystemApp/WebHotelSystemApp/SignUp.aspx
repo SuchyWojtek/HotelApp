@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Załóż konto</title>
 </head>
 <body style="background-color:azure">
     <form id="form1" runat="server">
@@ -24,7 +24,7 @@
             <asp:TextBox ID="txbSurname" runat="server"></asp:TextBox>
             <br /><br />
             <asp:Label ID="Label5" runat="server" Text="Date of birth:"></asp:Label>
-            <asp:TextBox ID="txbDate" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txbDate" runat="server" TextMode="Date"></asp:TextBox>
             <br /><br />
             <asp:Label ID="Label6" runat="server" Text="Male:"></asp:Label>
             <asp:TextBox ID="txbMale" runat="server"></asp:TextBox>
