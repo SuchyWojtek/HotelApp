@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHotelSystemApp", "WebHot
 		{B2C5B9C7-E55A-4D0B-9225-7110FD68B139} = {B2C5B9C7-E55A-4D0B-9225-7110FD68B139}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHotelSystemApp.Tests", "WebHotelSystemApp.Tests\WebHotelSystemApp.Tests.csproj", "{1974D0D5-4386-42B4-841C-36D75181CB18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProjectHotelSystemApp", "UnitTestProjectHotelSystemApp\UnitTestProjectHotelSystemApp.csproj", "{681C8611-A7BE-432A-BD25-E16E28403B97}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B2C5B9C7-E55A-4D0B-9225-7110FD68B139} = {B2C5B9C7-E55A-4D0B-9225-7110FD68B139}
 	EndProjectSection
@@ -29,10 +29,10 @@ Global
 		{D722BBD3-15CE-4F5F-911E-9F5604CFB5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D722BBD3-15CE-4F5F-911E-9F5604CFB5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D722BBD3-15CE-4F5F-911E-9F5604CFB5C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1974D0D5-4386-42B4-841C-36D75181CB18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1974D0D5-4386-42B4-841C-36D75181CB18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1974D0D5-4386-42B4-841C-36D75181CB18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1974D0D5-4386-42B4-841C-36D75181CB18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681C8611-A7BE-432A-BD25-E16E28403B97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681C8611-A7BE-432A-BD25-E16E28403B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681C8611-A7BE-432A-BD25-E16E28403B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681C8611-A7BE-432A-BD25-E16E28403B97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,4 +4,10 @@ C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemA
 C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.csproj.CoreCompileInputs.cache
 C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.dll
 C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.pdb
-C:\Users\Wojtek\Desktop\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\bin\WcfServiceHotelSystemApp.dll.config
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\bin\WcfServiceHotelSystemApp.dll
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\bin\WcfServiceHotelSystemApp.pdb
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.csprojResolveAssemblyReference.cache
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.csproj.CoreCompileInputs.cache
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.dll
+C:\Users\Wojtek\Desktop\Old projects\HotelApp\WcfServiceHotelSystemApp\WcfServiceHotelSystemApp\obj\Debug\WcfServiceHotelSystemApp.pdb

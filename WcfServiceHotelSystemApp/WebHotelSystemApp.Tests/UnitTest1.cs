@@ -58,7 +58,7 @@ namespace WebHotelSystemApp.Tests
         [TestMethod]
         public void TestRoom()
         {
-            Room r = new Room(1,2,3,200.50,true);
+            Room r = new Room(1, 2, 3, 200.50, true);
 
             Assert.IsNotNull(r);
         }
