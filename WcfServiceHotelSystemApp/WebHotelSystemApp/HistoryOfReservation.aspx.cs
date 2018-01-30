@@ -50,7 +50,7 @@ namespace WebHotelSystemApp
 
             for (int i = 0; i < 50; i++)
             {
-                id += arr[0][i] + Environment.NewLine;
+                id += arr[0][i] + "</br>";
             }
             return id;
         }
@@ -60,7 +60,7 @@ namespace WebHotelSystemApp
 
             for (int i = 0; i < 50; i++)
             {
-                b += arr[1][i] + Environment.NewLine;
+                b += arr[1][i] + "</br>";
             }
             return b;
         }
@@ -70,7 +70,7 @@ namespace WebHotelSystemApp
 
             for (int i = 0; i < 50; i++)
             {
-                e += arr[2][i] + Environment.NewLine;
+                e += arr[2][i] + "</br>";
             }
             return e;
         }
